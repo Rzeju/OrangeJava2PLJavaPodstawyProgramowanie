@@ -8,6 +8,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Podajmy liczbę naturalną n = ");
         int n = scanner.nextInt();
 
         for (int i = 2; i < n; i++) {
