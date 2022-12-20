@@ -23,10 +23,13 @@ public class Main {
         }
 
         System.out.printf("Element n = %d ciągu Fibonacciego wynosi -> %d", n, current);
+
+        int recursionResult = calculateFibonacciRecursion(n);
+        System.out.printf("\nREKURENCJA!! Element n = %d ciągu Fibonacciego wynosi -> %d", n, recursionResult);
     }
 
     public static int calculateFibonacciRecursion(int n) {
-        if (n < 2) {
+        if (n < 3) {
             return 1;
         } else {
             return calculateFibonacciRecursion(n - 1) + calculateFibonacciRecursion(n - 2);
