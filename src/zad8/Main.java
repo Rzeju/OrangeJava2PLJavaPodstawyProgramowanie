@@ -37,7 +37,7 @@ public class Main {
                 break;
             //przypadek dla mnożenia
             case "*":
-                System.out.println("Wynik mnożenia = " + (number1 - number2));
+                System.out.println("Wynik mnożenia = " + (number1 + number2));
                 break;
             //przypadek dla dzielenia
             case "/":
