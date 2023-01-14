@@ -39,14 +39,25 @@ public class Main {
 
         System.out.printf("Element n = %d ciągu Fibonacciego wynosi -> %d", n, current);
 
+        //wywołanie statycznej metody rekurencyjne
         int recursionResult = calculateFibonacciRecursion(n);
         System.out.printf("\nREKURENCJA!! Element n = %d ciągu Fibonacciego wynosi -> %d", n, recursionResult);
     }
 
+    //metoda statyczna - nie potrzeba tworzyć obiektu tej klasy aby ją wywołać
+    //oblicza wartość zadanego elementu ciągu Fibonacciego korzystając z rekurencji (metoda wywołuje samą siebie)
     public static int calculateFibonacciRecursion(int n) {
+        //elementy 1 oraz 2 mają wartość jeden, zwrcamy wtedy tę wartość
         if (n < 3) {
             return 1;
         } else {
+            //wywołanie rekurencyjne - kolejny element ciągu Fibonacciego to suma dwóch poprzednich stąd (n - 1) oraz (n - 2)
+            //każdy wywołanie funkcji będzie zamieniane na wywołanie tej samej funkcji z mniejszy argumentem
+            //np calculateElementRecursion(3) = calculateElementRecursion(2) + calculateElementRecursion(1)
+            //np calculateElementRecursion(4) = calculateElementRecursion(3) + calculateElementRecursion(2)
+            //wywołania te będą następować do momentu aż zostaną rozłożone na te, których wartość algorytm może zwócić
+            //czyli do moemntu calculateElementRecursion(2) lub calculateElementRecursion(1) (PATRZ IF tam jest return)
+            //na koniec wszystkie wywołania zostaną zsumowane i otrzymamy wynik
             return calculateFibonacciRecursion(n - 1) + calculateFibonacciRecursion(n - 2);
         }
     }
